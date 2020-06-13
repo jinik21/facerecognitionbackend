@@ -11,12 +11,10 @@ const saltRounds = 10;
 
 const dbase=knex({
         client: 'pg',
-        connection: {
-        host : '127.0.0.1',
-        user : 'postgres',
-        password : 'nikheel121',
-        database : 'facerecognition'
-        }
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+        rejectUnauthorized: false
+         }
     });
 
 const app = express();
