@@ -6,6 +6,7 @@ const knex = require('knex');
 const signup=require('./controllers/signup');
 const signin=require('./controllers/signin');
 const image=require('./controllers/image');
+require('dotenv').config();
 
 const saltRounds = 10;
 
