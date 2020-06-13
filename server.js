@@ -12,7 +12,7 @@ const saltRounds = 10;
 
 const dbase=knex({
         client: 'pg',
-        connectionString: process.env.DATABASE_URL,
+        connection: process.env.DATABASE_URL,
         ssl: {
             rejectUnauthorized: false
         }
