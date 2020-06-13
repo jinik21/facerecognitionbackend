@@ -23,7 +23,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/',(req,resp)=>{resp.send(dbase.users)})
+app.get('/',(req,resp)=>{resp.send('working ')})
 
 app.post('/signin',(req,resp)=>{signin.handlesignin(req,resp,dbase,bcrypt)})
 
@@ -34,6 +34,6 @@ app.put('/image',(req,resp)=>{image.handleimage(req,resp,dbase)})
 app.post('/imageUrl',(req,resp)=>{image.handleApicall(req,resp)})
 
 
-app.listen(3000,()=>{
-    console.log('app is runing on 3000')
+app.listen(process.env.PORT|| 3000,()=>{
+    console.log(`app is runing on ${process.env.PORT}`)
 })
