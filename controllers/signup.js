@@ -29,7 +29,7 @@ const handlesignup=(req,resp,dbase,bcrypt,saltRounds)=>{
         .then(trx.commit)
         .catch(trx.rollback)
     })
-    .catch(err=>resp.status(400).json('Unable To Register',err))
+    .catch(err=>resp.status(400).json(err))
 
 }
 
